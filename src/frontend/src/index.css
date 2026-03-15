@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Navy primary: #0F2044 */
+    --primary: 0.22 0.058 258;
+    --primary-foreground: 1 0 0;
+
+    /* Darker orange accent: deep burnt orange */
+    --accent: 0.4 0.19 40;
+    --accent-foreground: 1 0 0;
+
+    --background: 1 0 0;
+    --foreground: 0.22 0.058 258;
+
+    --card: 1 0 0;
+    --card-foreground: 0.22 0.058 258;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.22 0.058 258;
+
+    --secondary: 0.96 0.01 258;
+    --secondary-foreground: 0.22 0.058 258;
+
+    --muted: 0.96 0.01 258;
+    --muted-foreground: 0.52 0.02 258;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 1 0 0;
+
+    --border: 0.9 0.015 258;
+    --input: 0.9 0.015 258;
+    --ring: 0.22 0.058 258;
+
+    --radius: 0.5rem;
+
+    --chart-1: 0.4 0.19 40;
+    --chart-2: 0.22 0.058 258;
+    --chart-3: 0.65 0.15 258;
+    --chart-4: 0.55 0.12 40;
+    --chart-5: 0.8 0.1 258;
+
+    --sidebar: 0.22 0.058 258;
+    --sidebar-foreground: 1 0 0;
+    --sidebar-primary: 0.4 0.19 40;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.3 0.058 258;
+    --sidebar-accent-foreground: 1 0 0;
+    --sidebar-border: 0.3 0.058 258;
+    --sidebar-ring: 0.4 0.19 40;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* Click-to-call pulse animation */
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 oklch(0.4 0.19 40 / 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px oklch(0.4 0.19 40 / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 oklch(0.4 0.19 40 / 0);
+  }
+}
+
+.pulse-orange {
+  animation: pulse-ring 2s infinite;
+}
